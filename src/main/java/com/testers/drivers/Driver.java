@@ -2,31 +2,34 @@ package com.testers.drivers;
 
 import java.util.Objects;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import com.testers.constants.FrameworkConstants;
 
-public class Driver {
-
-	public static WebDriver driver; //when declared it will have null value
+public final class Driver {
+	
+	private Driver() {
+		
+	}
 
 	public static void initDriver() {
+		
+		System.out.println(Thread.currentThread().getId() + " : "+DriverManager.getDriver());
 
-		if (Objects.isNull(driver)) {
-			System.setProperty("webdriver.chrome.driver", 
-					FrameworkConstants.getChromeDriverPath());
-			driver= new ChromeDriver();
-			driver.get("https://www.google.co.in/");
+		if (Objects.isNull(DriverManager.getDriver())) 
+		{
+			System.setProperty("webdriver.chrome.driver", FrameworkConstants.getChromeDriverPath());
+			DriverManager.setDriver(new ChromeDriver());
+			DriverManager.getDriver().get(FrameworkConstants.getURL());
 		}
 	}
 
 	public static void quitDriver() {
-		
-		if(Objects.nonNull(driver)) {
-			driver.quit();
-			driver=null;
-		}
-		
-	}
 
+		if(Objects.nonNull(DriverManager.getDriver())) 
+		{
+			DriverManager.getDriver().quit();
+			DriverManager.setDriver(null);
+			DriverManager.unload();
+		}
+	}
 }
