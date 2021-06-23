@@ -3,6 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <test thread-count="5" name="Test(failed)" parallel="methods">
     <classes>
+      <class name="com.testers.tests.LoginPageTests">
+        <methods>
+          <include name="test2"/>
+          <include name="tearDown"/>
+          <include name="test1"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.testers.tests.LoginPageTests -->
       <class name="com.testers.tests.HomePageTests">
         <methods>
           <include name="test3"/>

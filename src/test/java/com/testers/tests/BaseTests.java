@@ -1,5 +1,7 @@
 package com.testers.tests;
 
+import java.io.IOException;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -11,8 +13,9 @@ public class BaseTests {
 		
 	}
 	
+	//if no choice then only provide public access
 	@BeforeMethod
-	protected void setUp() {
+	protected void setUp() throws IOException {
 		Driver.initDriver();
 	}
 	
