@@ -2,6 +2,8 @@ package com.testers.pages;
 
 import org.openqa.selenium.By;
 
+import com.testers.enums.WaitStrategy;
+
 public class OrangeHRMLoginPage extends BasePage{
 
 	private final By textboxUsername = By.id("txtUsername");
@@ -10,7 +12,7 @@ public class OrangeHRMLoginPage extends BasePage{
 	private final By buttonLogin = By.id("btnLogin");
 
 	public OrangeHRMLoginPage enterUserName(String username) {
-		sendKeys(textboxUsername, username);
+		sendKeys(textboxUsername, username ,WaitStrategy.CLICKABLE);
 		return new OrangeHRMLoginPage();
 	}
 
@@ -20,7 +22,7 @@ public class OrangeHRMLoginPage extends BasePage{
 	}
 
 	public OrangeHRMHomePage clickLogin() {
-		click(buttonLogin);
+		click(buttonLogin ,WaitStrategy.PRESENCE);
 		return new OrangeHRMHomePage(); 
 
 	}

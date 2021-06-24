@@ -1,13 +1,8 @@
 package com.testers.pages;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.google.common.util.concurrent.Uninterruptibles;
-import com.testers.drivers.DriverManager;
+import com.testers.enums.WaitStrategy;
 
 public class OrangeHRMHomePage extends BasePage{
 	 
@@ -16,19 +11,14 @@ public class OrangeHRMHomePage extends BasePage{
 	 
 	public OrangeHRMLoginPage clickLogout(){
 		
-		//Uninterruptibles.sleepUninterruptibly(3, TimeUnit.SECONDS);
-		
-		WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(),10);
-		wait.until(ExpectedConditions.elementToBeClickable(linkLogout));//old fashioned
-		//wait.until(d->d.findElement(linkLogout)).isEnabled() ;//java 8 way
-		
-		click(linkLogout);
+		click(linkLogout, WaitStrategy.CLICKABLE);
 		return new OrangeHRMLoginPage();
 	}
 	
 	public OrangeHRMHomePage clickWelcome() {
+		
 		click(linkWelcome);
 		return this;
 	}
 }
-  
+   

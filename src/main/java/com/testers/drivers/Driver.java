@@ -3,7 +3,8 @@ package com.testers.drivers;
 import java.util.Objects;
 import org.openqa.selenium.chrome.ChromeDriver;
 import com.testers.constants.FrameworkConstants;
-import com.testers.utils.ReadPropertyFile;
+import com.testers.enums.ConfigProperties;
+import com.testers.utils.PropertyUtils;
 
 public final class Driver {
 
@@ -19,7 +20,7 @@ public final class Driver {
 		{
 			System.setProperty("webdriver.chrome.driver", FrameworkConstants.getChromeDriverPath());
 			DriverManager.setDriver(new ChromeDriver());
-			DriverManager.getDriver().get(ReadPropertyFile.get("URL"));
+			DriverManager.getDriver().get(PropertyUtils.get(ConfigProperties.URL));
 		}
 	}
 

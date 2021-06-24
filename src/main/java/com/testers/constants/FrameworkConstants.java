@@ -5,18 +5,21 @@ public final class FrameworkConstants {
 	private FrameworkConstants(){
 		
 	}
-	private static final String CHROMEDRIVERPATH =System.getProperty("user.dir")+"/src/test/resources/executables/chromedriver.exe";
-	private static final String URL ="https://www.google.co.in/";
-
+	
+	public static final String RESOURCESPATH =System.getProperty("user.dir")+"/src/test/resources";
+	private static final String CHROMEDRIVERPATH = RESOURCESPATH +"/executables/chromedriver.exe";
+	public static final String CONGIGFILEPATH = RESOURCESPATH+"/config/config.properties";
+	private static final int EXPLICITWAIT = 10;
 
 	public static String getChromeDriverPath() {
 		return CHROMEDRIVERPATH;
 	}
 
-
-	public static String getURL() {
-		return URL;
+	public static String getConfigFilePath() {
+		return CONGIGFILEPATH;
 	}
-	
-	
+
+	public static int getExplicitwait() {
+		return EXPLICITWAIT;
+	}
 }

@@ -9,9 +9,12 @@ import java.util.Map.Entry;
 import java.util.Objects;
 import java.util.Properties;
 
-public class ReadPropertyFile {
+import com.testers.constants.FrameworkConstants;
+import com.testers.enums.ConfigProperties;
 
-	private ReadPropertyFile(){
+public class PropertyUtils {
+
+	private PropertyUtils(){
 
 	}
 	private static Properties prop = new Properties();
@@ -19,27 +22,23 @@ public class ReadPropertyFile {
 
 	static {
 		
-		String configFilePath =System.getProperty("user.dir")+"/src/test/resources/config/config.properties";
 		FileInputStream configFile;
 		try {
-			configFile = new FileInputStream(configFilePath);
+			configFile = new FileInputStream(FrameworkConstants.getConfigFilePath());
 			prop.load(configFile);
 						
 			for (Entry<Object, Object> entry :prop.entrySet()) {
 				CONFIGMAP.put( String.valueOf(entry.getKey()), String.valueOf(entry.getValue()) );
-			}
-			
+			}	
 		// prop.entrySet().forEach(entry -> CONFIGMAP.put( String.valueOf(entry.getKey()), String.valueOf(entry.getValue()) ));
-		// can write as above also , but java 8 needed 
-		// Lambda expressions are allowed only at source level 1.8 or above	
-			
+				
 		}catch (FileNotFoundException e) { 	e.printStackTrace();
 		}catch (IOException e) { e.printStackTrace();
 		}catch (Exception e) { e.printStackTrace();
 		}
 	}
 	
-	public static String get(String key) {
+	public static String get(ConfigProperties key) {
 		
 		if( Objects.isNull(key) || Objects.isNull(CONFIGMAP.get(key)) ) {
 			try {
@@ -48,6 +47,6 @@ public class ReadPropertyFile {
 			catch (Exception e) { e.printStackTrace();	
 			}
 		}
-		return CONFIGMAP.get(key);	
+		return CONFIGMAP.get(key.name().toLowerCase());	
 	}
 }
