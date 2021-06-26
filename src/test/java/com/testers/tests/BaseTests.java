@@ -3,14 +3,26 @@ package com.testers.tests;
 import java.io.IOException;
 
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
-
+import org.testng.annotations.BeforeSuite;
 import com.testers.drivers.Driver;
+import com.testers.reports.ExtentReport;
 
 public class BaseTests {
 
 	protected BaseTests(){
 		
+	}
+	
+	@BeforeSuite
+	public void beforeSuite() {	
+		ExtentReport.initReports();
+	}
+	
+	@AfterSuite
+	public void flushReports() throws IOException {
+		ExtentReport.flushReports();	
 	}
 	
 	//if no choice then only provide public access

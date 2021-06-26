@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Rupesh\AppData\Local\Temp\testng-eclipse-1222872407\testng-customsuite.xml</span>
+                    <span>C:\Users\Rupesh\AppData\Local\Temp\testng-eclipse-927172541\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,7 +104,12 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.testers.tests.OrangeHRMTests" hash-for-method="LoginLogoutTest">LoginLogoutTest</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.testers.tests.OrangeHRMTests" hash-for-method="LoginLogoutTest(Admin, admin123)">LoginLogoutTest(Admin, admin123)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.testers.tests.OrangeHRMTests" hash-for-method="LoginLogoutTest(Rupesh, rupesh123)">LoginLogoutTest(Rupesh, rupesh123)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -127,9 +132,18 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="LoginLogoutTest">
-                  </a> <!-- LoginLogoutTest -->
+                  <a name="LoginLogoutTest(Admin, admin123)">
+                  </a> <!-- LoginLogoutTest(Admin, admin123) -->
                   <span class="method-name">LoginLogoutTest</span>
+                  <span class="parameters">(Admin, admin123)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="LoginLogoutTest(Rupesh, rupesh123)">
+                  </a> <!-- LoginLogoutTest(Rupesh, rupesh123) -->
+                  <span class="method-name">LoginLogoutTest</span>
+                  <span class="parameters">(Rupesh, rupesh123)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -137,7 +151,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Rupesh\AppData\Local\Temp\testng-eclipse-1222872407\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Rupesh\AppData\Local\Temp\testng-eclipse-927172541\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -186,16 +200,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'LoginLogoutTest')
 data.setCell(0, 2, 'com.testers.tests.OrangeHRMTests')
-data.setCell(0, 3, 8258);
+data.setCell(0, 3, 14299);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'LoginLogoutTest')
+data.setCell(1, 2, 'com.testers.tests.OrangeHRMTests')
+data.setCell(1, 3, 10386);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 8 seconds</span>
+              <span class="suite-total-time">Total running time: 24 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -222,18 +240,38 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">com.testers.tests.OrangeHRMTests</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">beforeSuite</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">0 ms</span>
+                <span class="method-start">445 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">463 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">LoginLogoutTest</span>
-                <span class="method-start">11838 ms</span>
+                <span class="method-name">LoginLogoutTest(Rupesh, rupesh123)</span>
+                <span class="method-start">13061 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">LoginLogoutTest(Admin, admin123)</span>
+                <span class="method-start">16058 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">20102 ms</span>
+                <span class="method-start">23458 ms</span>
               </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">30359 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-suite after">
+                <span class="method-name">flushReports</span>
+                <span class="method-start">31200 ms</span>
+              </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

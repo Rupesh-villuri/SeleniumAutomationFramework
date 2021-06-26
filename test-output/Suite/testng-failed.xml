@@ -3,21 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <test thread-count="5" name="Test(failed)" parallel="methods">
     <classes>
-      <class name="com.testers.tests.LoginPageTests">
+      <class name="com.testers.tests.OrangeHRMTests">
         <methods>
-          <include name="test2"/>
           <include name="tearDown"/>
-          <include name="test1"/>
+          <include name="beforeSuite"/>
+          <include name="LoginLogoutTest" invocation-numbers="0"/>
           <include name="setUp"/>
+          <include name="flushReports"/>
         </methods>
-      </class> <!-- com.testers.tests.LoginPageTests -->
-      <class name="com.testers.tests.HomePageTests">
-        <methods>
-          <include name="test3"/>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.testers.tests.HomePageTests -->
+      </class> <!-- com.testers.tests.OrangeHRMTests -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

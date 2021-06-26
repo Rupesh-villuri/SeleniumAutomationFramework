@@ -29,9 +29,7 @@ public class PropertyUtils {
 						
 			for (Entry<Object, Object> entry :prop.entrySet()) {
 				CONFIGMAP.put( String.valueOf(entry.getKey()), String.valueOf(entry.getValue()) );
-			}	
-		// prop.entrySet().forEach(entry -> CONFIGMAP.put( String.valueOf(entry.getKey()), String.valueOf(entry.getValue()) ));
-				
+			}					
 		}catch (FileNotFoundException e) { 	e.printStackTrace();
 		}catch (IOException e) { e.printStackTrace();
 		}catch (Exception e) { e.printStackTrace();
@@ -40,7 +38,7 @@ public class PropertyUtils {
 	
 	public static String get(ConfigProperties key) {
 		
-		if( Objects.isNull(key) || Objects.isNull(CONFIGMAP.get(key)) ) {
+		if( Objects.isNull(key) || Objects.isNull(CONFIGMAP.get(key.name().toLowerCase())) ) {
 			try {
 				throw new Exception ("Property Name  "+ key +" is not found .please check config.properties file");
 			}
