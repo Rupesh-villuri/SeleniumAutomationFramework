@@ -2,6 +2,7 @@ package com.testers.pages;
 import org.openqa.selenium.By;
 
 import com.testers.enums.WaitStrategy;
+import com.testers.reports.ExtentLogger;
 import com.testers.reports.ExtentManager;
 
 public class OrangeHRMHomePage extends BasePage{
@@ -12,14 +13,14 @@ public class OrangeHRMHomePage extends BasePage{
 	public OrangeHRMHomePage clickWelcome() {
 
 		click(linkWelcome,WaitStrategy.PRESENCE);
-		ExtentManager.getExtentTest().pass("Welcome Clicked");
+		//ExtentLogger.pass("Welcome Clicked");
 		return this;
 	}
 	
 	public OrangeHRMLoginPage clickLogout(){
 		
 		click(linkLogout, WaitStrategy.CLICKABLE);
-		ExtentManager.getExtentTest().pass("Logout Clicked");
+		//ExtentLogger.pass("Logout Clicked");
 		return new OrangeHRMLoginPage();
 	}
 }

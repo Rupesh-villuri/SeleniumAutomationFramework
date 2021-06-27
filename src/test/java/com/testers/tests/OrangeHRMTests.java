@@ -14,7 +14,7 @@ public class OrangeHRMTests extends BaseTests {
 	@Test(dataProvider="LoginTestDataProvider")
 	public void LoginLogoutTest(String uname , String pwd) {
 
-		ExtentReport.createTest("Customtext1");
+		//ExtentReport.createTest("Customtext1");
 		String title =new OrangeHRMLoginPage()
 				.enterUserName("Admin").enterPassWord("admin123").clickLogin()
 				.clickWelcome().clickLogout()

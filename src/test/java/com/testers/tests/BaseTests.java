@@ -1,7 +1,6 @@
 package com.testers.tests;
 
 import java.io.IOException;
-
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
@@ -17,12 +16,12 @@ public class BaseTests {
 	
 	@BeforeSuite
 	public void beforeSuite() {	
-		ExtentReport.initReports();
+		
 	}
 	
 	@AfterSuite
 	public void flushReports() throws IOException {
-		ExtentReport.flushReports();	
+		
 	}
 	
 	//if no choice then only provide public access
@@ -33,6 +32,7 @@ public class BaseTests {
 	
 	@AfterMethod
 	protected void tearDown(){
+	
 		Driver.quitDriver();
 	}
 }
