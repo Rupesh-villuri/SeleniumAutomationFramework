@@ -6,22 +6,21 @@ import java.io.IOException;
 import java.util.Objects;
 
 import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.testers.constants.FrameworkConstants;
 
 public final class ExtentReport {
 
 	private ExtentReport() {}
 	private static ExtentReports extent;
-	public static ExtentTest test; 
 
 	public static void initReports()
 	{
 		if(Objects.isNull(extent)) {
 
 			extent = new ExtentReports();
-			ExtentSparkReporter spark = new ExtentSparkReporter("target/index.html");
+			ExtentSparkReporter spark = new ExtentSparkReporter(FrameworkConstants.getExtentReportFilePath());
 			extent.attachReporter(spark);
 
 			spark.config().setTheme(Theme.STANDARD);
@@ -34,15 +33,10 @@ public final class ExtentReport {
 		if (Objects.nonNull(extent)) {
 			extent.flush();
 		}	
-		Desktop.getDesktop().browse(new File("target/index.html").toURI());
+		Desktop.getDesktop().browse(new File(FrameworkConstants.getExtentReportFilePath()).toURI());
 	}
 	public static void createTest(String testcasename) {
-
-		test = extent.createTest(testcasename);
-		ExtentManager.setExtentTest(test);
 		
-		/* can use in both ways	
-	    	ExtentManager.setExtentTest(extent.createTest(testcasename));
-		*/
+	    ExtentManager.setExtentTest(extent.createTest(testcasename));		
 	}
 }

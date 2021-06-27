@@ -10,7 +10,7 @@
         <methods>
           <include name="tearDown"/>
           <include name="beforeSuite"/>
-          <include name="LoginLogoutTest" invocation-numbers="0"/>
+          <include name="LoginLogoutTest" invocation-numbers="1"/>
           <include name="setUp"/>
           <include name="flushReports"/>
         </methods>

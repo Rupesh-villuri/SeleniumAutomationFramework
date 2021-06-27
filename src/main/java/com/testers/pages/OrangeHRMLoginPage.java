@@ -12,17 +12,17 @@ public class OrangeHRMLoginPage extends BasePage{
 	private final By buttonLogin = By.id("btnLogin");
 
 	public OrangeHRMLoginPage enterUserName(String username) {
-		sendKeys(textboxUsername, username ,WaitStrategy.CLICKABLE);
+		sendKeys(textboxUsername, username ,WaitStrategy.CLICKABLE , "username");
 		return new OrangeHRMLoginPage();
 	}
 
 	public OrangeHRMLoginPage enterPassWord(String password) {
-		sendKeys(textboxPassword, password);
+		sendKeys(textboxPassword, password ,WaitStrategy.CLICKABLE ,"password ");
 		return this;
 	}
 
 	public OrangeHRMHomePage clickLogin() {
-		click(buttonLogin ,WaitStrategy.PRESENCE);
+		click(buttonLogin ,WaitStrategy.PRESENCE ,"Login Button");
 		return new OrangeHRMHomePage(); 
 
 	}

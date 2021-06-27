@@ -30,16 +30,16 @@ public class ListenerClass implements ITestListener ,ISuiteListener{
 	}
 
 	public void onTestSuccess(ITestResult result) {
-		ExtentLogger.pass(result.getMethod().getMethodName() + "is passed");
+		ExtentLogger.pass(result.getMethod().getMethodName() + " is passed");
 	}
 
 	public void onTestFailure(ITestResult result) {
-		ExtentLogger.fail(result.getMethod().getMethodName() + "is failed");
+		ExtentLogger.fail(result.getMethod().getMethodName() + " is failed");
 		//we can attach screenshot on test failure 
 	}
 
 	public void onTestSkipped(ITestResult result) {
-		ExtentLogger.skip(result.getMethod().getMethodName() + "is skipped");
+		ExtentLogger.skip(result.getMethod().getMethodName() + " is skipped");
 
 	}
 

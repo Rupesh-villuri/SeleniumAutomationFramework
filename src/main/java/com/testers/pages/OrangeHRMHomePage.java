@@ -12,14 +12,14 @@ public class OrangeHRMHomePage extends BasePage{
 
 	public OrangeHRMHomePage clickWelcome() {
 
-		click(linkWelcome,WaitStrategy.PRESENCE);
+		click(linkWelcome,WaitStrategy.PRESENCE, "Welcome Link");
 		//ExtentLogger.pass("Welcome Clicked");
 		return this;
 	}
 	
 	public OrangeHRMLoginPage clickLogout(){
 		
-		click(linkLogout, WaitStrategy.CLICKABLE);
+		click(linkLogout, WaitStrategy.CLICKABLE ,"Logout Link");
 		//ExtentLogger.pass("Logout Clicked");
 		return new OrangeHRMLoginPage();
 	}

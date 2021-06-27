@@ -3,6 +3,10 @@ package com.testers.enums;
 public enum ConfigProperties {
 	
 	URL,
-	BROWSER
-	
+	BROWSER,
+	OVERRIDEREPORTS,
+	PASSEDSTEPSCREENSHOT,
+	FAILEDSTEPSCREENSHOT,
+	SKIPPEDTESTSCREENSHOT
+		
 }

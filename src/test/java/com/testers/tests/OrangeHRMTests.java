@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.testers.pages.OrangeHRMLoginPage;
-import com.testers.reports.ExtentReport;
 
 public class OrangeHRMTests extends BaseTests {
 	
@@ -16,19 +15,19 @@ public class OrangeHRMTests extends BaseTests {
 
 		//ExtentReport.createTest("Customtext1");
 		String title =new OrangeHRMLoginPage()
-				.enterUserName("Admin").enterPassWord("admin123").clickLogin()
+				.enterUserName(uname).enterPassWord(pwd).clickLogin()
 				.clickWelcome().clickLogout()
 				.getTitle(); 
 		
 		Assertions.assertThat(title).isEqualTo("OrangeHRM");				
 	}
 	
-	@DataProvider(name = "LoginTestDataProvider", parallel=true)
+	@DataProvider(name = "LoginTestDataProvider", parallel=false)
 	public Object[][] getData() {
 		
 		return new Object[][] {
 			{"Admin","admin123"},
-			{"Rupesh","rupesh123"},
+			{"masn","nskna"}
 		};
 	}
 }
